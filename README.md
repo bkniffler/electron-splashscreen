@@ -1,6 +1,7 @@
 <div align="center">
   <h2>electron-splashscreen</h2>
   <img alt="electron-splashscreen" src="https://raw.githubusercontent.com/bkniffler/electron-splashscreen/master/assets/preview.png" height="300px" />
+  <br />
   <strong>Nice splashscreens for your electronjs app</strong>
   <br />
   <br />
