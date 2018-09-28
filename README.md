@@ -54,7 +54,7 @@ app.on('ready', async () => {
     ...
   });
 
-  const hide = initSplash({
+  const hideSplashscreen = initSplash({
     mainWindow,
     icon: isDev ? resolve('assets/icon.ico') : undefined,
     url: require.resolve('electron-splashscreen/office.html'),
@@ -65,6 +65,16 @@ app.on('ready', async () => {
     logo: resolve('assets/logo.svg'),
     website: 'www.my-brand.com',
     text: 'Initializing ...'
+  });
+
+  // send an ipcRenderer.send('ready') from your browser as soon as the app is ready
+  ipcMain.on('ready', hideSplashscreen);
+
+  mainWindow.once('ready-to-show', () => {
+    // Electron-splash will automatically show the mainwindow as soon, but you can show it earlier in dev
+    if (isDev) {
+      mainWindow.show();
+    }
   });
 })
 ```
