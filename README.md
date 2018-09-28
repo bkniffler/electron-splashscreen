@@ -1,6 +1,6 @@
 <div align="center">
   <h2>electron-splashscreen</h2>
-  <img alt="alpacka" src="https://raw.githubusercontent.com/bkniffler/electron-splashscreen/master/assets/splash.png" height="300px" />
+  <img alt="electron-splashscreen" src="https://raw.githubusercontent.com/bkniffler/electron-splashscreen/master/assets/preview.png" height="300px" />
   <strong>Nice splashscreens for your electronjs app</strong>
   <br />
   <br />
