@@ -2,3 +2,4 @@ src
 tsconfig.json
 yarn.lock
 travis.yml
+assets

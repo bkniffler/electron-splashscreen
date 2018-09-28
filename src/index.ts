@@ -52,7 +52,7 @@ module.exports = ({
     color: col,
     text
   });
-  splashScreen.loadURL(`${url}#${Buffer.from(string).toString('base64')}`);
+  splashScreen.loadURL(`${url}#${Buffer.from(string).toString()}`);
   splashScreen.show();
   splashScreen.setAlwaysOnTop(true);
   splashScreen.setAlwaysOnTop(false);
