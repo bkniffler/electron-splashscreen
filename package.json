@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "electron-splashscreen",
+  "description": "",
+  "author": "Benjamin Kniffler <bkniffler@me.com>",
+  "main": "lib",
+  "esnext": "es",
+  "module": "es",
+  "types": "lib/index.d.js",
+  "license": "MIT",
+  "scripts": {
+    "up": "yarn upgrade-interactive --latest",
+    "netlify": "yarn build && cd example/react && yarn && yarn build",
+    "prepublishOnly": "yarn build && yarn test",
+    "clean": "rimraf lib",
+    "build": "yarn clean && tsc && tsc --module esnext --outDir es",
+    "test": "jest",
+    "coverage": "codecov"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.0",
+    "codecov": "^3.1.0",
+    "electron": "^3.0.0",
+    "jest": "^23.6.0",
+    "lerna": "^3.4.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "electron": "^3.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**"
+    ],
+    "coverageReporters": [
+      "html",
+      "cobertura",
+      "text"
+    ]
+  }
+}

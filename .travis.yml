@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - '10'
+
+sudo: false
+
+cache: yarn
+
+install:
+  - echo "@fortawesome:registry=https://npm.fontawesome.com/" >> ~/.npmrc
+  - echo "//npm.fontawesome.com/:_authToken=${FA_PACKAGE_TOKEN}" >> ~/.npmrc
+  - yarn
+  - yarn bootstrap
+
+script:
+  - yarn build
+  - yarn test
+  - yarn coverage
