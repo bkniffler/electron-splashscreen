@@ -1,4 +1,4 @@
-const { BrowserWindow, systemPreferences } = require('electron');
+import { BrowserWindow, systemPreferences } from 'electron';
 
 export interface Props {
   mainWindow: any;
@@ -14,7 +14,7 @@ export interface Props {
   website?: any;
   text?: any;
 }
-module.exports = ({
+export default ({
   mainWindow,
   color,
   icon,
