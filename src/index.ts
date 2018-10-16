@@ -1,4 +1,7 @@
 import { BrowserWindow, systemPreferences } from 'electron';
+export { default as Office } from './templates/office';
+export { default as Dolphin } from './templates/dolphin';
+export { default as Simple } from './templates/simple';
 
 export interface Props {
   mainWindow: any;
@@ -44,15 +47,20 @@ export default ({
     icon
   });
 
-  const string = JSON.stringify({
-    brand,
-    productName,
-    logo,
-    website,
+  const args = {
+    brand: brand,
+    productName: productName,
+    logo: logo,
+    website: website,
     color: col,
-    text
-  });
-  splashScreen.loadURL(`${url}#${Buffer.from(string).toString()}`);
+    text: text
+  }
+  if (typeof url === 'function') {
+    var file = 'data:text/html;charset=UTF-8,' + encodeURIComponent(url(args));
+    splashScreen.loadURL(file);
+  } else {
+    splashScreen.loadURL(url + "#" + Buffer.from(JSON.stringify(args)).toString());
+  }
   splashScreen.show();
   splashScreen.setAlwaysOnTop(true);
   splashScreen.setAlwaysOnTop(false);

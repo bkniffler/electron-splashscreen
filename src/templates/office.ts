@@ -1,3 +1,12 @@
+
+export default ({
+  logo = "https://upload.wikimedia.org/wikipedia/commons/d/dd/Microsoft_Office_2013_logo.svg",
+  brand = 'Brand',
+  productName = 'Product',
+  text = 'Loading ...',
+  website = 'www.website.com',
+  color = '#666'
+}) => `
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
@@ -132,41 +141,22 @@
   </style>
 </head>
 
-<body>
-  <div id="box">
-    <span id="logo"><img id="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Microsoft_Office_2013_logo.svg" />
-      <h6 id="logo-text">Brand</h6>
+<body style="background-color:${color}">
+  <div id="box" style="background-color:${color}">
+    <span id="logo">
+      <img id="logo-img" src="${logo}" />
+      <h6 id="logo-text">${brand}</h6>
     </span>
-    <h1 id="product" class="text">Product</h1>
+    <h1 id="product" class="text">${productName}</h1>
     <div class="dot" id="dot1"></div>
     <div class="dot" id="dot2"></div>
     <div class="dot" id="dot3"></div>
     <div class="dot" id="dot4"></div>
     <div class="dot" id="dot5"></div>
-    <h4 class="text" id="starting-txt">Loadingtext ...</h4>
-    <h4 class="text" id="author-txt">www.website.com</h4>
+    <h4 class="text" id="starting-txt">${text}</h4>
+    <h4 class="text" id="author-txt">${website}</h4>
   </div>
-  <script>
-    /*var ipcRenderer = require("electron").ipcRenderer;
-    ipcRenderer.on("update", function (event, status) {
-      document.getElementById("status").innerText = status;
-    })*/
-
-    if (window.location.hash && window.location.hash.length > 1) {
-      const args = JSON.parse(decodeURIComponent(window.location.hash.slice(1)));
-      document.body.style.backgroundColor = args.color;
-      document.getElementById("box").style.backgroundColor = args.color;
-      document.getElementById("box").style.backgroundColor = args.color;
-      document.getElementById("box").style.backgroundColor = args.color;
-      document.getElementById("logo-img").src = args.logo;
-      document.getElementById("logo-text").innerText = args.brand;
-      document.getElementById("product").innerText = args.productName;
-      document.getElementById("starting-txt").innerText = args.text;
-      document.getElementById("author-txt").innerText = args.website;
-    } else {
-      document.body.style.backgroundColor = '#666';
-    }
-  </script>
 </body>
 
 </html>
+`;
