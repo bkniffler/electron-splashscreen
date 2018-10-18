@@ -1,4 +1,5 @@
-import { BrowserWindow, systemPreferences } from 'electron';
+import { BrowserWindow, systemPreferences, ipcMain } from 'electron';
+export { default as reportReady } from './report-ready';
 
 export interface Props {
   mainWindow: any;
@@ -56,8 +57,10 @@ export default ({
   splashScreen.show();
   splashScreen.setAlwaysOnTop(true);
   splashScreen.setAlwaysOnTop(false);
-  return () => {
+  const hide = () => {
     setTimeout(() => splashScreen.destroy(), 500);
     mainWindow.show();
   };
+  ipcMain.on('ready', hide);
+  return hide;
 };
