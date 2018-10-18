@@ -1,3 +1,5 @@
+
+export default () => `
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
@@ -380,3 +382,4 @@
 </body>
 
 </html>
+`;
