@@ -4,7 +4,7 @@ export { default as Office } from './templates/office';
 export { default as Dolphin } from './templates/dolphin';
 export { default as Simple } from './templates/simple';
 
-export interface Props {
+export interface IProps {
   mainWindow: any;
   color?: any;
   icon?: any;
@@ -17,6 +17,7 @@ export interface Props {
   logo?: any;
   website?: any;
   text?: any;
+  backgroundColor?: string;
 }
 export default ({
   mainWindow,
@@ -30,8 +31,9 @@ export default ({
   productName,
   logo,
   website,
-  text
-}: Props) => {
+  text,
+  backgroundColor
+}: IProps) => {
   const col =
     color ||
     (systemPreferences.getAccentColor &&
@@ -45,7 +47,8 @@ export default ({
     modal: true,
     skipTaskbar: true,
     frame: false,
-    icon
+    icon,
+    backgroundColor
   });
 
   const args = {
