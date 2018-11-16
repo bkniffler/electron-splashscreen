@@ -1,6 +1,5 @@
-
 export default ({
-  logo = "https://upload.wikimedia.org/wikipedia/commons/d/dd/Microsoft_Office_2013_logo.svg",
+  logo = 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Microsoft_Office_2013_logo.svg',
   brand = 'Brand',
   productName = 'Product',
   text = 'Loading ...',
@@ -49,7 +48,7 @@ export default ({
       color: white;
       font-size: 16px;
       font-weight: 200;
-      font-family: Segoe UI;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       letter-spacing: 0px;
       margin-left: 5px;
     }
@@ -67,7 +66,7 @@ export default ({
     #box .text {
       color: white;
       font-weight: 400;
-      font-family: Segoe UI;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
     #box h4 {
