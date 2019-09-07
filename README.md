@@ -45,9 +45,9 @@ npm i electron-splashscreen
 ## Example
 
 ```jsx
-const initSplash = require('electron-splashscreen');
-const isDev = require('electron-is-dev');
-const { resolve } = require('app-root-path');
+import initSplash, { Office } from 'electron-splashscreen';
+import isDev from 'electron-is-dev';
+import { resolve } from 'app-root-path';
 
 app.on('ready', async () => {
   const mainWindow = new BrowserWindow({
