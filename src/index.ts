@@ -43,11 +43,15 @@ export default ({
   const splashScreen = new BrowserWindow({
     width,
     height,
-    center: true,
+    parent: mainWindow,
     modal: true,
     transparent: true,
     skipTaskbar: true,
     frame: false,
+    autoHideMenuBar: true,
+    alwaysOnTop: true,
+    resizable: false,
+    movable: false,
     icon,
     backgroundColor
   });
@@ -69,8 +73,6 @@ export default ({
     );
   }
   splashScreen.show();
-  splashScreen.setAlwaysOnTop(true);
-  splashScreen.setAlwaysOnTop(false);
   const hide = () => {
     setTimeout(() => splashScreen.destroy(), 500);
     mainWindow.show();
