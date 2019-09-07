@@ -19,7 +19,7 @@ export interface IProps {
   text?: any;
   backgroundColor?: string;
 }
-export default ({
+export const initSplashScreen = ({
   mainWindow,
   color,
   icon,
