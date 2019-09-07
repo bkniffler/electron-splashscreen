@@ -45,6 +45,7 @@ export default ({
     height,
     center: true,
     modal: true,
+    transparent: true,
     skipTaskbar: true,
     frame: false,
     icon,
