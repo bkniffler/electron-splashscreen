@@ -57,7 +57,7 @@ app.on('ready', async () => {
   const hideSplashscreen = initSplash({
     mainWindow,
     icon: isDev ? resolve('assets/icon.ico') : undefined,
-    url: require.resolve('electron-splashscreen/office.html'),
+    url: Office,
     width: 500,
     height: 300,
     brand: 'My Brand',
