@@ -53,7 +53,10 @@ export const initSplashScreen = ({
     resizable: false,
     movable: false,
     icon,
-    backgroundColor
+    backgroundColor,
+    webPreferences: {
+      webSecurity: false
+    }
   });
 
   const args = {

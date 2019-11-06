@@ -45,7 +45,7 @@ npm i electron-splashscreen
 ## Example
 
 ```jsx
-import { initSplashScreen, Office } from 'electron-splashscreen';
+import { initSplashScreen, OfficeTemplate } from 'electron-splashscreen';
 import isDev from 'electron-is-dev';
 import { resolve } from 'app-root-path';
 
@@ -57,7 +57,7 @@ app.on('ready', async () => {
   const hideSplashscreen = initSplashScreen({
     mainWindow,
     icon: isDev ? resolve('assets/icon.ico') : undefined,
-    url: Office,
+    url: OfficeTemplate,
     width: 500,
     height: 300,
     brand: 'My Brand',
